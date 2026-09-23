@@ -9,7 +9,7 @@ from threading import Thread
 TOKEN = "8851143949:AAH4osueyBkhkNZYpRgHXdAjRMxoTJgfnj4"
 bot = telebot.TeleBot(TOKEN)
 
-# Render'ın "Web Service" olarak görmesi ve 502 hatası vermemesi için mini web sunucusu
+# Mini web sunucusu (Render 502 hatası almamak için)
 app = Flask('')
 
 @app.route('/')
@@ -23,13 +23,13 @@ def keep_alive():
     t = Thread(target=run_web)
     t.start()
 
-# Bot Mantığı
+# Bot Depolama ve Dil Sözlükleri
 link_storage = {}
 user_languages = {}
 
 translations = {
     'tr': {
-        'welcome': "Merhaba! Ben **TEKMD İLETİŞİM** Medya İndirme Botu.\n\nBana herhangi bir link gönder, hemen indirme seçeneklerini getireyim!\n\n📱 **Instagram:** instagram.com/senin_instagram_adresin\n🌍 Dil değiştirmek için: /dil",
+        'welcome': "Merhaba! Ben **TEKMD İLETİŞİM** Medya İndirme Botu.\n\nBana herhangi bir link gönder, hemen indirme seçeneklerini getireyim!\n\n📱 **Instagram:** https://www.instagram.com/tekmdiletisimavcilar/\n🌍 Dil değiştirmek için: /dil",
         'invalid_link': "Lütfen geçerli bir bağlantı (link) gönderin.",
         'choose': "Bu bağlantı için ne yapmak istersiniz?",
         'btn_video': "📥 Video İndir",
@@ -42,10 +42,10 @@ translations = {
         'expired': "Bağlantı süresi dolmuş, lütfen linki tekrar gönderin.",
         'lang_select': "Lütfen bir dil seçin / Please select a language / اختر لغة:",
         'lang_changed': "Dil başarıyla Türkçe olarak ayarlandı! 🇹🇷",
-        'shop_info': "🏪 **TEKMD İLETİŞİM**\n📱 Güvenilir Mobil Servis ve Aksesuarlar\n\n🔗 Instagram: instagram.com/senin_instagram_adresin"
+        'shop_info': "🏪 **TEKMD İLETİŞİM**\n📱 Güvenilir Mobil Servis ve Aksesuarlar\n\n🔗 Instagram: https://www.instagram.com/tekmdiletisimavcilar/"
     },
     'en': {
-        'welcome': "Hello! I am **TEKMD İLETİŞİM** Media Downloader Bot.\n\nSend me any link and I'll give you the download buttons!\n\n📱 **Instagram:** instagram.com/senin_instagram_adresin\n🌍 To change language: /lang",
+        'welcome': "Hello! I am **TEKMD İLETİŞİM** Media Downloader Bot.\n\nSend me any link and I'll give you the download buttons!\n\n📱 **Instagram:** https://www.instagram.com/tekmdiletisimavcilar/\n🌍 To change language: /lang",
         'invalid_link': "Please send a valid link.",
         'choose': "What would you like to do with this link?",
         'btn_video': "📥 Download Video",
@@ -58,10 +58,10 @@ translations = {
         'expired': "Connection expired, please send the link again.",
         'lang_select': "Please select a language / Lütfen dil seçin / اختر لغة:",
         'lang_changed': "Language successfully changed to English! 🇬🇧",
-        'shop_info': "🏪 **TEKMD İLETİŞİM**\n📱 Reliable Mobile Service & Accessories\n\n🔗 Instagram: instagram.com/senin_instagram_adresin"
+        'shop_info': "🏪 **TEKMD İLETİŞİM**\n📱 Reliable Mobile Service & Accessories\n\n🔗 Instagram: https://www.instagram.com/tekmdiletisimavcilar/"
     },
     'ar': {
-        'welcome': "مرحباً! أنا بوت التحميل الخاص بـ **TEKMD İLETİŞİM**.\n\nأرسل لي أي رابط وسأعطيك أزرار التحميل!\n\n📱 **إنستغرام:** instagram.com/senin_instagram_adresin\n🌍 لتغيير اللغة: /lang",
+        'welcome': "مرحباً! أنا بوت التحميل الخاص بـ **TEKMD İLETİŞİM**.\n\nأرسل لي أي رابط وسأعطيك أزرار التحميل!\n\n📱 **إنستغرام:** https://www.instagram.com/tekmdiletisimavcilar/\n🌍 لتغيير اللغة: /lang",
         'invalid_link': "الرجاء إرسال رابط صالح.",
         'choose': "ماذا تريد أن تفعل بهذا الرابط؟",
         'btn_video': "📥 تحميل الفيديو",
@@ -74,7 +74,7 @@ translations = {
         'expired': "انتهت صلاحية الرابط، يرجى إرسال الرابط مرة أخرى.",
         'lang_select': "الرجاء اختيار اللغة / Please select a language / Lütfen dil seçin:",
         'lang_changed': "تم تغيير اللغة بنجاح إلى العربية! 🇸🇦",
-        'shop_info': "🏪 **TEKMD İLETİŞİM**\n📱 خدمات وصيانة الهواتف المحمولة\n\n🔗 إنستغرام: instagram.com/senin_instagram_adresin"
+        'shop_info': "🏪 **TEKMD İLETİŞİM**\n📱 خدمات وصيانة الهواتف المحمولة\n\n🔗 إنستغرام: https://www.instagram.com/tekmdiletisimavcilar/"
     }
 }
 
@@ -189,6 +189,6 @@ def handle_callback(call):
                 os.remove(filename)
 
 if __name__ == '__main__':
-    print("Web sunucusu ve bot başlatılıyor...")
+    print("TEKMD İLETİŞİM botu güncel ayarlarla başlatılıyor...")
     keep_alive()
     bot.infinity_polling()
