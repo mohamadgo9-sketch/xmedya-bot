@@ -29,7 +29,7 @@ user_languages = {}
 
 translations = {
     'tr': {
-        'welcome': "Merhaba! Ben **TEKMD İLETİŞİM** Medya İndirme Botu.\n\nBana herhangi bir link gönder, hemen indirme seçeneklerini getireyim!\n\n📱 **Instagram:** instagram.com/senin_instagram_adresin\n🌍 Dil değiştirmek için: /dil",
+        'welcome': "Merhaba! Ben **TEKMD İLETİŞİM** Medya İndirme Botu.\n\nBana herhangi bir link gönder, hemen indirme seçeneklerini getireyim!\n\n📱 **Instagram:** https://www.instagram.com/tekmdiletisimavcilar\n🌍 Dil değiştirmek için: /dil",
         'invalid_link': "Lütfen geçerli bir bağlantı (link) gönderin.",
         'choose': "Bu bağlantı için ne yapmak istersiniz?",
         'btn_video': "📥 Video İndir",
